@@ -1,0 +1,35 @@
+/*main css for JS17 Restaurant UI*/
+
+
+.container {
+
+}
+img {
+	width: 200px;
+	height: 200px;
+}
+h1 {
+	font-size: 2.5em;
+}
+h2 {
+	font-size: 2.1em;
+	color: white;
+}
+.menu {
+	background-color: #f29;
+
+}
+.plate {
+	width:200px;
+	height:200px;
+	background-color: red;
+}
+h4 {
+	font-size: 1.5em;
+}
+.form {
+	background-color: black;
+	width:100px;
+	height: 150px;
+	border: 1px solid black;
+}
