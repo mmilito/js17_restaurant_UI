@@ -91,7 +91,7 @@ var Plate = function(plateName,plateDescription,platePrice,plateIngredients){
  var yellowPlate = new Plate("Yellow Plate Special","Tuesday Dinner Only",15.00,[primeRib,mashedPotatoes,greenBeans]);
  var guacPlate = new Plate("Guacamole Plate","Vegan Choice",10.00,[mexicanRice,gluFreeGuac,tortillaChips]);
 
-	// console.log(bluePlate.plateIngredients);
+	 //console.log(bluePlate.plateName,bluePlate.platePrice);
 
 Plate.prototype.toString = function() {
  	var plateInfo = "\n Plate Name: "+this.plateName +"\n"
@@ -150,8 +150,8 @@ Plate.prototype.isCitrusFree = function(){
 Plate.prototype.create = function(){
 	this.$el = $('<div>')
 	  .addClass('plate')
-	  .append('<h4>'+this.plateName+'</h4>')
-	  .append('<p>'+this.plateDescription+'</p>'+'<p>'+this.platePrice+'</p>');
+	  .append('<button class="btn">'+this.plateName+'</button>')
+	  .append('<p>'+this.plateDescription+'</p>'+'<p class="price">'+this.platePrice+'</p>');
 
 return this.$el;
 };		
@@ -163,9 +163,9 @@ var Order = function(plate){
 };
 
 // Order instances
-var order1 = new Order([bluePlate]);
-var order2 = new Order([bluePlate,redPlate]);
-var order3 = new Order([bluePlate,redPlate,yellowPlate]);
+var order1 = new Order([]);
+//var order2 = new Order([bluePlate,redPlate]);
+//var order3 = new Order([bluePlate,redPlate,yellowPlate]);
 	//console.log(order1);
 
 Order.prototype.toString = function() {
@@ -181,7 +181,6 @@ Order.prototype.create = function(){
 
 return this.$el;
 };
-
 
 
 //Menu constructor
@@ -266,6 +265,14 @@ $('.menu')
 	.append('<h2>Beverages</h2>')
 	.append(margarita.create())
 	.append(soda.create());
+$('.btn').on('click',function(){
+	var plateName=$(this).text();
+	var platePrice=($(this).siblings('.price').text());
+	//console.log(platePrice);
+	//console.log(sibs.text());
+	$('.order').append('<p class="orderPlateName">'+plateName+'</p>')
+			.append('<p class="orderPlatePrice">'+platePrice+'</p>');
+});
 
 
 
