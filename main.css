@@ -2,29 +2,49 @@
 
 
 .container {
-
+	background-color: #f7be81;
 }
 img {
 	width: 200px;
 	height: 200px;
+	margin: 20px;
+	padding-left: 400px;
+	display: inline;
+	position: absolute;
+	top: 55px;
 }
 h1 {
-	font-size: 2.5em;
+	font-family: 'Chango', cursive;
+	font-size: 34px;
+	width: 100px;
+	padding-left: 50px;
+	position: relative;
 }
 h2 {
-	font-size: 2.1em;
+	font-family: 'Chango', cursive;
+	font-size: 28px;
 	color: brown;
 	padding-top:20px;
+	padding-left:20px;
 }
 .menu {
 	background-color: peachpuff;
 	border: 2px solid brown;
 
 }
-.plate {
-	width:200px;
-	height:200px;
+.btn {
+	font-family: 'Chango', cursive;
+	font-size: 20px;
+	width: 200px;
+	height:30px;
 	background-color: red;
+}
+.plate, .drink {
+	display: inline-block;
+	width:200px;
+	height:100px;
+	background-color: pink;
+	margin: 10px 20px;
 }
 h4 {
 	font-size: 1.5em;
@@ -34,5 +54,5 @@ h4 {
 	width:100px;
 	height: 150px;
 	border: 1px solid black;
-	
+
 }

@@ -71,8 +71,8 @@ var Drink = function(drinkName,drinkDescription,drinkPrice,drinkIngredients){
 Drink.prototype.create = function(){
 	this.$el = $('<div>')
 	  .addClass('drink')
-	  .append('<h4>'+this.drinkName+'</h4>')
-	  .append('<p>'+this.drinkDescription+'</p>'+'<p>'+this.drinkPrice+'</p>');
+	  .append('<button class="btn">'+this.drinkName+'</button>')
+	  .append('<p>'+this.drinkDescription+'</p>'+'<p class="price">'+this.drinkPrice+'</p>');
 
 return this.$el;
 };
@@ -86,9 +86,9 @@ var Plate = function(plateName,plateDescription,platePrice,plateIngredients){
 	this.plateIngredients=plateIngredients;
 };
 //instances of Plate
- var bluePlate = new Plate("Blue Plate Special","Sunday Brunch Only",10.50,[burrito,tortillaChips,salsa]);
- var redPlate = new Plate("Red Plate Special","Monday Dinner Only",12.50,[fajitas,blackBeans,mexicanRice]);
- var yellowPlate = new Plate("Yellow Plate Special","Tuesday Dinner Only",15.00,[primeRib,mashedPotatoes,greenBeans]);
+ var bluePlate = new Plate("Blue Plate","Sunday Brunch Only",10.50,[burrito,tortillaChips,salsa]);
+ var redPlate = new Plate("Red Plate","Monday Dinner Only",12.50,[fajitas,blackBeans,mexicanRice]);
+ var yellowPlate = new Plate("Yellow Plate","Tuesday Dinner Only",15.00,[primeRib,mashedPotatoes,greenBeans]);
  var guacPlate = new Plate("Guacamole Plate","Vegan Choice",10.00,[mexicanRice,gluFreeGuac,tortillaChips]);
 
 	 //console.log(bluePlate.plateName,bluePlate.platePrice);
@@ -266,12 +266,12 @@ $('.menu')
 	.append(margarita.create())
 	.append(soda.create());
 $('.btn').on('click',function(){
-	var plateName=$(this).text();
-	var platePrice=($(this).siblings('.price').text());
+	var itemName=$(this).text();
+	var itemPrice=($(this).siblings('.price').text());
 	//console.log(platePrice);
 	//console.log(sibs.text());
-	$('.order').append('<p class="orderPlateName">'+plateName+'</p>')
-			.append('<p class="orderPlatePrice">'+platePrice+'</p>');
+	$('.order').append('<p class="orderItemName">'+itemName+'</p>')
+			.append('<p class="orderItemPrice">'+itemPrice+'</p>');
 });
 
 
